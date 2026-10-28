@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Offers &amp; Combo Packs — SF Soda · Shital Foods</title>
+<meta name="description" content="Current offers and combo packs from SF Soda — claim them on WhatsApp.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=Tiro+Devanagari+Marathi&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-logo">🥤 Shital Foods</div>
+  <div style="color:rgba(255,255,255,0.3);font-size:0.82rem;">Taste the Real India</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script>try{if(sessionStorage.getItem('sf_loaded')==='1')document.getElementById('pageLoader').style.display='none'}catch(e){}</script>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <a class="nav-brand" href="index.html" style="text-decoration:none">
+    <div class="nav-brand-icon">🥤</div>
+    <div class="nav-brand-name">Shital <span>Foods</span></div>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="index.html" data-page="home">Home</a>
+    <a class="nav-link" href="flavors.html" data-page="products">Flavors</a>
+    <a class="nav-link" href="story.html" data-page="story">Our Story</a>
+    <a class="nav-link active" href="offers.html" data-page="offers">Offers</a>
+    <a class="nav-link" href="gallery.html" data-page="gallery">Gallery</a>
+    <a class="nav-link" href="nutrition.html" data-page="nutrition">Nutrition</a>
+    <a class="nav-link" href="franchise.html" data-page="franchise">Franchise</a>
+    <a class="nav-link" href="contact.html" data-page="contact">Contact</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:0.75rem;">
+    <button class="nav-cta" style="background:transparent!important;border:1.5px solid var(--amber)!important;color:var(--amber-light)!important;box-shadow:none!important;" onclick="showPage('member')">👤 Join</button>
+    <button class="nav-cta" onclick="toggleCart()">🛒 Cart <span id="cartBadge" style="background:white;color:var(--amber);border-radius:50%;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;margin-left:0.3rem;">0</span></button>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a class="mobile-nav-link" href="index.html">🏠 Home</a>
+  <a class="mobile-nav-link" href="flavors.html">🥤 Flavors</a>
+  <a class="mobile-nav-link" href="story.html">📖 Our Story</a>
+  <a class="mobile-nav-link" href="offers.html">🎁 Offers</a>
+  <a class="mobile-nav-link" href="gallery.html">📸 Gallery</a>
+  <a class="mobile-nav-link" href="nutrition.html">🌿 Nutrition</a>
+  <a class="mobile-nav-link" href="franchise.html">🚀 Franchise</a>
+  <a class="mobile-nav-link" href="contact.html">📞 Contact</a>
+  <a class="mobile-nav-link" href="member.html">👤 Member / Dealer</a>
+</div>
+
+
+<div class="page active" id="page-offers">
+  <div class="offers-hero" style="padding-top:120px;">
+    <div class="section-eyebrow" style="display:block;color:rgba(255,255,255,0.7);">Limited Time Offers</div>
+    <h1>Big Savings.<br><em style="font-style:italic;">Bigger Smiles.</em></h1>
+    <p>Exclusive deals only for Shital Foods lovers. Grab them before they're gone!</p>
+  </div>
+  <div class="offers-section">
+    <div class="offers-grid" id="offersGrid"></div>
+  </div>
+  <div class="combo-section">
+    <div class="combo-inner">
+      <div class="section-eyebrow" style="display:block;text-align:center;">Value Packs</div>
+      <h2 style="font-family:'Cormorant Garamond','Tiro Devanagari Marathi',serif;font-size:2.2rem;font-weight:900;color:white;text-align:center;">Combo <em style="color:var(--amber-light);">Deals</em></h2>
+      <div class="combo-grid" id="comboPacks"></div>
+    </div>
+  </div>
+</div>
+
+
+<div id="site-footer" class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-text">🥤 Shital Foods</div>
+      <div class="footer-tagline">Handcrafted soda flavors made with love from the heart of Vidarbha, Nagbhid. Taste the real India.</div>
+      <div style="display:flex;gap:0.6rem;margin-top:1rem;">
+        <a href="https://wa.me/919764026807" target="_blank" style="background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);color:#25d366;padding:0.45rem 1rem;border-radius:50px;text-decoration:none;font-size:0.82rem;font-weight:700;display:flex;align-items:center;gap:0.4rem;">📱 9764026807</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Pages</div>
+      <a class="footer-link" href="index.html">🏠 Home</a>
+      <a class="footer-link" href="flavors.html">🥤 Flavors</a>
+      <a class="footer-link" href="story.html">📖 Our Story</a>
+      <a class="footer-link" href="offers.html">🎁 Offers</a>
+    </div>
+    <div>
+      <div class="footer-col-title">More</div>
+      <a class="footer-link" href="gallery.html">📸 Gallery</a>
+      <a class="footer-link" href="nutrition.html">🌿 Nutrition</a>
+      <a class="footer-link" href="franchise.html">🤝 Franchise</a>
+      <a class="footer-link" href="contact.html">📞 Contact</a>
+      <a class="footer-link" href="member.html">👤 Member / Dealer</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div style="color:rgba(255,255,255,0.35);font-size:0.85rem;line-height:1.9;">Near Cinema Talkies Chowk<br>Market Road, Ward No. 8<br>Nagbhid, Chandrapur<br>Maharashtra — 441205</div>
+      <div style="margin-top:0.8rem;color:rgba(255,255,255,0.5);font-size:0.82rem;">Prop: Chandan W. Kose</div>
+      <div style="margin-top:0.4rem;color:rgba(255,255,255,0.5);font-size:0.82rem;">FSSAI Lic. No.: 21525060003112</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;align-items:center;justify-content:space-between;padding:0 0 1.2rem;font-size:.82rem;color:rgba(255,255,255,0.6);">
+    <span>🛡️ FSSAI Lic. No.: <strong style="color:var(--amber-light);letter-spacing:.04em;">21525060003112</strong></span>
+    <span><a style="cursor:pointer;color:inherit;text-decoration:underline;" href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a style="cursor:pointer;color:inherit;text-decoration:underline;" href="terms.html">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a style="cursor:pointer;color:inherit;text-decoration:underline;" href="member.html">Member / Dealer</a></span>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="yr">2026</span> Shital Foods. All Rights Reserved.</span>
+    <span>Made with ❤️ in Nagbhid, Vidarbha</span>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-head"><h2>🛒 Your Cart</h2><button class="cclose" onclick="toggleCart()">✕</button></div>
+  <div class="cart-body" id="cartBody"><div class="cart-empty-state"><span class="ei">🥤</span><p>Your cart is empty.<br>Explore our flavors!</p></div></div>
+  <div class="cart-foot">
+    <div class="cart-total-row"><span class="cart-total-label">Total Amount</span><span class="cart-total-val" id="cartTotal">₹0</span></div>
+    <button class="cart-wa-btn" onclick="waOrder()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order on WhatsApp
+    </button>
+  </div>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div class="toast" id="toast"></div>
+
+<div class="pop" id="pop"><div class="pop-box"><button class="pop-x" onclick="closePop()">×</button><div class="pop-img"><img id="popImg" alt=""></div><div class="pop-info" id="popInfo"></div></div></div>
+
+<div class="gv" id="gv"><button class="gv-x" onclick="closeGV()">×</button><button class="gv-nav gv-p" onclick="gvStep(-1)">‹</button><div class="gv-stage" id="gvStage"></div><button class="gv-nav gv-n" onclick="gvStep(1)">›</button>
+<div class="gv-bar"><span id="gvCap"></span><div class="gv-ctl"><button onclick="gvStep(-1)">⏮ Prev</button><button id="gvPlay" onclick="gvToggle()">▶ Slideshow</button><button onclick="gvStep(1)">Next ⏭</button><span id="gvCnt"></span></div></div><div class="gv-strip" id="gvStrip"></div></div>
+
+<script src="js/emoji-map.js"></script>
+<script src="js/media.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
